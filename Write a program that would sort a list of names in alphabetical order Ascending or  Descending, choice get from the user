@@ -1,0 +1,46 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
+
+public class SortNames {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        List<String> names = new ArrayList<>();
+        System.out.print("Enter the number of names to sort: ");
+        int numNames = scanner.nextInt();
+        System.out.println("Enter the names:");
+        for (int i = 0; i < numNames; i++) {
+            names.add(scanner.next());
+        }
+        System.out.print("Sort in ascending order (a) or descending order (d)? ");
+        char order = scanner.next().charAt(0);
+        if (order == 'a') {
+            Collections.sort(names);
+        } else if (order == 'd') {
+            Collections.sort(names, Comparator.reverseOrder());
+        } else {
+            System.out.println("Invalid order specified.");
+            return;
+        }
+        System.out.println("Sorted names:");
+        for (String name : names) {
+            System.out.println(name);
+        }
+    }
+}
+output:
+Enter the number of names to sort: 5
+Enter the names:
+John
+Sarah
+Bob
+Alice
+Eve
+Sort in ascending order (a) or descending order (d)? a
+Sorted names:
+Bob
+Eve
+John
+Sarah
