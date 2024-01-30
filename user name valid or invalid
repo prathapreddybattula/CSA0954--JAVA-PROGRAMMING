@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a valid string: ");
+        String input = scanner.nextLine();
+
+        if (input.matches("[a-zA-Z]+")) {
+            System.out.println("Valid string");
+        } else {
+            System.out.println("Invalid string. Please enter only alphabets.");
+        }
+    }
+}
+output:
+Enter a valid string: Hello
+Valid string
+Enter a valid string: Hello123
+Invalid string. Please enter only alphabets.
