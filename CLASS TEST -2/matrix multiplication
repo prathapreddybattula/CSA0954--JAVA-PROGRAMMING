@@ -1,0 +1,42 @@
+public class MatrixMultiplication {
+    public static void main(String[] args) {
+        int[][] mat1 = {{1, 2}, {5, 3}};
+        int[][] mat2 = {{2, 3}, {4, 1}};
+        int[][] sum = new int[2][2];
+
+        // Multiply the matrices
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                for (int k = 0; k < 2; k++) {
+                    sum[i][j] += mat1[i][k] * mat2[k][j];
+                }
+            }
+        }
+
+        System.out.println("Mat1:");
+        printMatrix(mat1);
+        System.out.println("Mat2:");
+        printMatrix(mat2);
+        System.out.println("Mat Sum:");
+        printMatrix(sum);
+    }
+
+    public static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+output:
+Mat1:
+1 2 
+5 3 
+Mat2:
+2 3 
+4 1 
+Mat Sum:
+10 5 
+22 18
