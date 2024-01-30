@@ -1,0 +1,29 @@
+public class CompositeNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the first number: ");
+        int a = scanner.nextInt();
+        System.out.print("Enter the second number: ");
+        int b = scanner.nextInt();
+
+        System.out.print("Composite numbers between " + a + " and " + b + ": ");
+        for (int i = a + 1; i < b; i++) {
+            if (isComposite(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+
+    public static boolean isComposite(int num) {
+        for (int i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+output:
+Enter the first number: 12
+Enter the second number: 19
+  Composite numbers between 12 and 19: 14 15 16 18
