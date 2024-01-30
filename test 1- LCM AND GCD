@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of integers: ");
+        int n = scanner.nextInt();
+        int[] numbers = new int[n];
+        System.out.println("Enter " + n + " integers:");
+        for (int i = 0; i < n; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+        int gcd = findGCD(numbers);
+        int lcm = findLCM(numbers, gcd);
+        System.out.println("GCD: " + gcd);
+        System.out.println("LCM: " + lcm);
+    }
+
+    public static int findGCD(int[] numbers) {
+        int result = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            result = gcd(result, numbers[i]);
+        }
+        return result;
+    }
+
+    public static int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcd(b, a % b);
+    }
+
+    public static int findLCM(int[] numbers, int gcd) {
+        int result = gcd;
+        for (int number : numbers) {
+            result = (result * number) / gcd;
+        }
+        return result;
+    }
+}
+output:
+Enter the number of integers: 3
+Enter 3 integers:
+12 18 36
+GCD: 6
+LCM: 36
