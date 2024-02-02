@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class TSPattern 
+{
+
+  public static void main(String[] args) 
+  {
+	int Number;
+	Scanner input=new Scanner(System.in);
+	System.out.print("enter rows:");
+	Number=input.nextInt();
+	input.close();
+        for(int i=Number;i>0;i--)
+        {
+        	for(int j=0;j<Number-i;j++)
+        	{
+        		System.out.print(" ");
+        	}
+        	for(int k=0;k<i;k++)
+        	{
+        		System.out.print("* ");
+        	}
+        	System.out.print("\n");
+        }
+
+  }
+}
