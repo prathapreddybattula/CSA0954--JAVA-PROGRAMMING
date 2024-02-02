@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class PerfectSquares {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);       
+        System.out.print("Enter lower range: ");
+        int low = sc.nextInt();     
+        System.out.print("Enter upper range: "); 
+        int high = sc.nextInt();   
+        ArrayList<Integer> list = new ArrayList<>();    
+        for(int i=low; i*i<=high; i++) {
+            int num = i*i;
+            if(sumOfDigits(num) < 10) {
+                list.add(num); 
+            }
+        }
+        System.out.println(list);
+    }  
+    public static int sumOfDigits(int num) {
+        int sum = 0;        
+        while(num > 0) {
+            sum += num % 10;
+            num = num / 10;
+        }
+        return sum;
+    }
+}
