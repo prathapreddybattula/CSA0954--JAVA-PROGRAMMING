@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class wordlast {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);   
+        System.out.print("Enter the string: ");
+        String str = sc.nextLine();
+        str = str.trim();
+      String[] words = str.split("\\s+");
+     String lastWord = words[words.length-1];        
+        System.out.println("The last word is: " + lastWord);
+       int len = lastWord.length();
+        System.out.println("Length of last word: " + len);
+        sc.close();
+    }
+}
