@@ -1,0 +1,36 @@
+import java.util.HashMap;
+public class RomanToInteger {
+    public static void main(String[] args) { 
+        String roman = "XXIV";    
+        int result = romanToInteger(roman);  
+        System.out.println(roman + " = " + result);
+    }
+    public static int romanToInteger(String roman) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        map.put('I', 1);
+        map.put('V', 5); 
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
+        int number = 0;
+        for(int i = 0; i < roman.length(); i++) {
+            char ch = roman.charAt(i);
+            if(i == roman.length() - 1) {
+                number += map.get(ch);
+            }
+            else {
+                int current = map.get(ch);
+                int next = map.get(roman.charAt(i+1));
+           if(current < next) {
+                    number -= current;
+                }
+                else {
+                    number += current; 
+                }
+            }
+        }    
+        return number;
+    }
+}
